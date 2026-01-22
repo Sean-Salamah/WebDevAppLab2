@@ -21,7 +21,7 @@ public class DepartmentController {
     }
 
     @GetMapping("/{id}")
-    public Department getDepartment(Long id){
+    public Department getDepartment(@PathVariable Long id){
         return service.getDepartmentById(id);
     }
 
@@ -31,8 +31,8 @@ public class DepartmentController {
         return service.createDepartment(department);
     }
 
-    @DeleteMapping
-    public void deleteDepartment(Long id){
+    @DeleteMapping("/{id}")
+    public void deleteDepartment(@PathVariable Long id){
          service.deleteDepartment(id);
     }
 }
